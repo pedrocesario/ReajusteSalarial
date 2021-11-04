@@ -24,8 +24,7 @@ namespace ReajusteSalarial
             }
             catch
             {
-                Console.WriteLine("Ops, algo deu errado. Lembre-se de digitar somente números!! :)");
-                ReajusteSalarial();
+                Sair();
             }
 
             if (salario <= 1700)
@@ -55,6 +54,36 @@ namespace ReajusteSalarial
                     break;
             }
 
+
+        }
+
+        static void Sair()
+        {
+            // Início variáveis
+            var menuSair = "";
+            // Fim variáveis 
+
+            Console.WriteLine("Ops, algo deu errado. Lembre-se de digitar somente números!! :)");
+            Console.Write("Deseja tentar novamente? [Sim/S] | [Não/N]: ");
+            menuSair = Console.ReadLine().ToLower().Substring(0, 1);
+
+            switch (menuSair)
+            {
+                case "s":
+                    {
+                        Console.Clear();
+                        ReajusteSalarial();
+                        break;
+                    }
+                default:
+                    {
+                        Console.Clear();
+                        System.Environment.Exit(0);
+                        break;
+                    }
+            }
+
         }
     }
+
 }
